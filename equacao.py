@@ -7,8 +7,8 @@ def exibir_menu():
     print('2 - Equação do 2o grau')
     print('3 - Sair do Programa')
     
-def calcular_equacao1(a, b, c):
-    x = (c - b) / a
+def calcular_equacao1(a, b):
+    x = - b / a
     return x
 
 def calcular_equacao2(a, b, c): #Função para obtenção dos valores.
@@ -26,11 +26,14 @@ while True:
 
     match opcao1:
         case 1:
-            print('Equação do 1o Grau: ax + b = c')
+            print('Equação do 1o Grau: ax + b = 0')
             a = int(input('Informe o valor de a: '))
             b = int(input('Informe o valor de b: '))
-            c = int(input('Informe o valor de c: '))
-            print(f'Equação do 1o Grau (valor de X): {calcular_equacao1(a, b, c)}')
+            if (a != 0):
+                x = -b / a; 
+                print(f'Equação do 1o Grau (valor de X): {calcular_equacao1(a, b)}')
+            else:
+                print('Impossível resolver a equação com a = 0'); 
             continue
  
         case 2:
